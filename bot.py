@@ -28,7 +28,7 @@ import re
 import subprocess
 import tempfile
 import uuid
-
+from dotenv import load_dotenv
 import requests
 import yt_dlp
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
@@ -46,8 +46,8 @@ logging.basicConfig(
     level=logging.INFO,
 )
 logger = logging.getLogger(__name__)
-
-BOT_TOKEN = "8883137791:AAHi29GDDzradtxbsjMghLolIGxatr69wH4"  # @BotFather dan olingan token
+load_dotenv()
+BOT_TOKEN = os.getenv('BOT_TOKEN')  # @BotFather dan olingan token
 
 # audd.io saytida ro'yxatdan o'tib, bepul API tokenini oling:
 # https://dashboard.audd.io/ — musiqani ovozidan aniqlash (Shazam-kabi) uchun kerak.
